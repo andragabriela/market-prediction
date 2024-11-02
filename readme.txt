@@ -3,26 +3,24 @@ Market Analysis and Prediction Application
 This repository contains the code for my data-driven market analysis and prediction application.
 
 Table of Contents
-1. [Description](#description)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [Contributing](#contributing)
-5. [License](#license)
+1. Description
+2. Installation
+3. Usage
+4. Contributing
+5. License
 
 Description
 This project is a personal application designed to collect, process, and analyze market-related data to predict potential market fluctuations. It uses data visualization, sentiment analysis, and clustering models to uncover insights and segment the market.
 
 ---
 
-## Installation
+Installation
 To set up the project locally, follow these steps:
 1. Clone the repository:   git clone https://github.com/andragabriela/market-prediction.git
 
-
-
 ---
 
-## Usage
+Usage
 The project structure is as follows:
 1. main.py: Main entry point of the application.
 2. controller/: Directory with the controller file of the application
@@ -44,13 +42,12 @@ Interacting with the App:
 
 ---
 
-## Contributing
-
-### Branches
+Contributing
+Branches
 - main: Main branch containing the stable version of the application.
 - feature/add-clustering-model: Branch for adding or updating the clustering model.
 
-### How to Contribute
+How to Contribute
 1. Fork the repository.
 2. Create a new branch from  for your feature or bug fix.
 3. Make changes and commit them with descriptive messages.
