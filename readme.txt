@@ -1,16 +1,60 @@
-Technologies Used
-Backend: Flask, for building a robust and interactive web interface.
-Data Processing: pandas for data manipulation, BeautifulSoup for web scraping, and requests for API integration.
-Machine Learning: scikit-learn for clustering models and feature preprocessing.
-Visualization: matplotlib for generating visual insights into the data.
-How It Works
-Data Collection: The app pulls data from various sources, processes it, and saves it in a structured format.
-Data Analysis: Visualizations are created to explore data characteristics and understand underlying patterns.
-Clustering Model: The app applies clustering techniques to segment the market data, providing insights into potential market trends and fluctuations.
-User Interface: Users can interact with the app through a web interface, trigger data collection and visualization processes, and view insights.
-Use Cases and Applications
-Market Trend Prediction: By analyzing market sentiment and other key features, the app can provide early indicators of market shifts.
-Consumer Behavior Analysis: Identifies how consumer sentiment or review trends correlate with market fluctuations.
-Investment Insights: Offers data-driven insights that could be valuable for making investment decisions or understanding economic trends.
-Project Significance
-This personal project demonstrates the ability to apply data science techniques, machine learning models, and software development skills to create a meaningful application that could assist in understanding and predicting market fluctuations. It’s a showcase of end-to-end project development, from data collection and preprocessing to modeling and visualization, all within a web-based platform.
+Market Analysis and Prediction Application
+
+This repository contains the code for my data-driven market analysis and prediction application.
+
+Table of Contents
+1. Description
+2. Installation
+3. Usage
+4. Contributing
+5. License
+
+Description
+This project is a personal application designed to collect, process, and analyze market-related data to predict potential market fluctuations. It uses data visualization, sentiment analysis, and clustering models to uncover insights and segment the market.
+
+---
+
+Installation
+To set up the project locally, follow these steps:
+1. Clone the repository:   git clone https://github.com/andragabriela/market-prediction.git
+
+---
+
+Usage
+The project structure is as follows:
+1. main.py: Main entry point of the application.
+2. controller/: Directory with the controller file of the application
+3. filesToUpload/: Directory with the controller file of the application
+4. model/: Directory with the entity file of the application
+5. repository/: Directory with the repository file of the application
+6. service/: Directory with the service file of the application
+7. static/: Directory containig visualization images.
+8. templates/: Directory for HTML templates.
+9. cleaned_reviews.csv: Has reviews from a csv file cleaned and reviewed
+10. fetched_data.json: A file that has reviews fetched an API
+11. processed_data.json: A file with reviews cleaned and preprocessed from other json file
+12. scraped_reviews.json: A file with reviews scraped from an e-commerce site
+
+
+Interacting with the App:
+- Use the web interface to collect data via web scraping, load tabular data, or fetch API data.
+- Generate visualizations and run the segmentation model to gain insights into market trends.
+
+---
+
+Contributing
+Branches
+- main: Main branch containing the stable version of the application.
+- feature/add-clustering-model: Branch for adding or updating the clustering model.
+
+How to Contribute
+1. Fork the repository.
+2. Create a new branch from  for your feature or bug fix.
+3. Make changes and commit them with descriptive messages.
+4. Push your branch to your forked repository.
+5. Create a pull request explaining your changes and their purpose.
+
+---
+
+## License
+This project is licensed under the MIT License. See the  file for details. 
