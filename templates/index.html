@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Collection Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        div {
+            margin: 30px auto;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        form {
+            margin: 10px;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .messages {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .messages li {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .success {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .danger {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .visualizations {
+            margin-top: 30px;
+        }
+
+        .visualizations img {
+            max-width: 80%;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Collection and Analysis</h1>
+    <div>
+        <form action="{{ url_for('scrape') }}" method="post">
+            <button type="submit">Scrape Data from Emag website</button>
+        </form>
+
+        <form action="{{ url_for('load_data') }}" method="post">
+            <button type="submit">Load Tabular Data</button>
+        </form>
+
+        <form action="{{ url_for('external_api') }}" method="post">
+            <button type="submit">Fetch API Data</button>
+        </form>
+
+        <!-- JSON File Upload Form -->
+        <form id="uploadForm" enctype="multipart/form-data" method="post" action="{{ url_for('json_load') }}">
+            <label for="jsonFile">Upload JSON File:</label>
+            <input type="file" name="json_file" id="jsonFile" accept=".json" required>
+            <button type="submit">Validate and Save JSON File</button>
+        </form>
+        <form action="{{ url_for('visualize') }}" method="post">
+            <button type="submit">Visualize Data</button>
+        </form>
+        <form action="{{ url_for('cluster') }}" method="post">
+            <button type="submit">Cluster Data</button>
+        </form>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="messages">
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <!-- Visualization Section -->
+    <div class="visualizations">
+        <h2>Data Visualizations</h2>
+        <img src="{{ url_for('static', filename='sentiment_distribution.png') }}" alt="Sentiment Distribution">
+        <img src="{{ url_for('static', filename='review_length_distribution.png') }}" alt="Review Length Distribution">
+        <img src="{{ url_for('static', filename='starRating_distribution.png') }}" alt="Star Rating Distribution">
+        <img src="{{ url_for('static', filename='review_clusters.png') }}" alt="Review Clusters">
+    </div>
+</body>
+</html>
